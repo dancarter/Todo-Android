@@ -6,6 +6,6 @@ class MainContract {
     }
 
     interface View {
-        fun displayAllToDoItems(todos: List<Todo>)
+        fun displayAllToDoItems(todos: List<Todo>?)
     }
 }
