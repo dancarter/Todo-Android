@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
+interface TodoItemViewHolder {
+    fun setTitle(title: String)
+}
 
 class TodoListRecyclerViewAdapter(
     private val presenter: MainPresenter
@@ -18,19 +21,19 @@ class TodoListRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-        presenter.onBindRepositoryRowViewAtPosition(position, holder)
+        presenter.updateTodo(position, holder)
     }
 
     override fun getItemCount(): Int = presenter.getTodoItemsCount()
 
-    class TodoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class TodoViewHolder(view: View) : RecyclerView.ViewHolder(view), TodoItemViewHolder {
         val contentView: TextView = view.findViewById(R.id.content)
 
         override fun toString(): String {
             return super.toString() + " '" + contentView.text + "'"
         }
 
-        fun setTitle(title: String) {
+        override fun setTitle(title: String) {
             contentView.text = title
         }
     }

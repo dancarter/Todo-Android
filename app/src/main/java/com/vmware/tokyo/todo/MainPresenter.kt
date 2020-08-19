@@ -18,9 +18,9 @@ class MainPresenter(
         }
     }
 
-    fun onBindRepositoryRowViewAtPosition(
+    fun updateTodo(
         position: Int,
-        holder: TodoListRecyclerViewAdapter.TodoViewHolder
+        holder: TodoItemViewHolder
     ) {
         val item = todoList[position]
         holder.setTitle(item.title)
