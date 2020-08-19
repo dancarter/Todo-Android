@@ -2,10 +2,10 @@ package com.vmware.tokyo.todo
 
 class MainContract {
     interface Presenter {
-        fun displayAllTodoItems()
+        fun getAllTodoItems()
     }
 
     interface View {
-        fun displayAllToDoItems(todos: List<Todo>?)
+        fun updateTodoList()
     }
 }

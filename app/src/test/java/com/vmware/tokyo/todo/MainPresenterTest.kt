@@ -18,7 +18,7 @@ class MainPresenterTest {
         val mainPresenter = MainPresenter(spyView, spyTodoRepository)
 
 
-        mainPresenter.displayAllTodoItems()
+        mainPresenter.getAllTodoItems()
 
 
         assertTrue(spyTodoRepository.getAll_wasCalled)
@@ -33,9 +33,9 @@ class MainPresenterTest {
         val todos = listOf(Todo("Build Android TodoList app."))
         spyTodoRepository.getAll_returnValue = todos
 
-        mainPresenter.displayAllTodoItems()
+        mainPresenter.getAllTodoItems()
 
 
-        assertEquals(spyView.displayAllToDoItems_argument_todos, todos)
+        assertTrue(spyView.updateTodoList_wasCalled)
     }
 }
