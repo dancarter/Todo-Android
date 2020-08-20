@@ -1,8 +1,11 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.vmware.tokyo.todo.*
+import com.vmware.tokyo.todo.components.todo.NetworkTodoRepository
+import com.vmware.tokyo.todo.components.todo.getTodoClient
 
 class MainActivity : AppCompatActivity(), MainContract.View {
     lateinit var mainPresenter: MainPresenter

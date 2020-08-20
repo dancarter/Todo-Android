@@ -1,5 +1,8 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.components.todo
 
+import com.vmware.tokyo.todo.ui.SpyTodoViewHolder
+import com.vmware.tokyo.todo.ui.SpyView
+import com.vmware.tokyo.todo.ui.MainPresenter
 import com.vmware.tokyo.todo.utils.MainCoroutineScopeRule
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

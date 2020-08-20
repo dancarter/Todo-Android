@@ -1,4 +1,4 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.components.todo
 
 interface TodoRepository {
     suspend fun getAll(): List<Todo>

@@ -1,10 +1,11 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.ui
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.vmware.tokyo.todo.R
 
 interface TodoItemViewHolder {
     fun setTitle(title: String)

@@ -1,5 +1,9 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.ui
 
+import com.vmware.tokyo.todo.components.todo.Todo
+import com.vmware.tokyo.todo.components.todo.TodoRepository
+import com.vmware.tokyo.todo.ui.MainContract
+import com.vmware.tokyo.todo.ui.TodoItemViewHolder
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 

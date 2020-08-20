@@ -1,4 +1,4 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.ui
 
 class SpyView : MainContract.View {
     var updateTodoList_wasCalled = false

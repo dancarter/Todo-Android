@@ -1,4 +1,4 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.components.todo
 
 class SpyTodoRepository: TodoRepository {
     var getAll_wasCalled: Boolean = false

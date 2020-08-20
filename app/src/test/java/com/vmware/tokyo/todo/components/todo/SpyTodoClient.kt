@@ -1,4 +1,4 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.components.todo
 
 class SpyTodoClient : TodoClient {
     var getAll_returnValue: List<Todo> = emptyList()

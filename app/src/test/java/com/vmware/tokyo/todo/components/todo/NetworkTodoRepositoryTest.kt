@@ -1,4 +1,4 @@
-package com.vmware.tokyo.todo
+package com.vmware.tokyo.todo.components.todo
 
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.assertEquals
