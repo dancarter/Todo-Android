@@ -27,6 +27,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            buildConfigField "String", "SERVER_BASE_URL", "\"https://todolistserver.cfapps.io/\""
+        }
+
+        acceptance {
+            dimension "environment"
+            buildConfigField "String", "SERVER_BASE_URL", "\"https://todolistserver.cfapps.io/\""
+        }
+    }
 }
 
 dependencies {
