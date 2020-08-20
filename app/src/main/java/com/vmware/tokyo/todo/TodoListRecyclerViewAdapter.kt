@@ -21,7 +21,7 @@ class TodoListRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-        presenter.updateTodo(position, holder)
+        presenter.updateTodoViewHolder(position, holder)
     }
 
     override fun getItemCount(): Int = presenter.getTodoItemsCount()

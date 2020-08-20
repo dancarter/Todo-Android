@@ -4,7 +4,7 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class TodoRepositoryTest {
+class NetworkTodoRepositoryTest {
     @Test
     fun `getAll returns list of todos`() = runBlockingTest {
         val spyTodoClient = SpyTodoClient()

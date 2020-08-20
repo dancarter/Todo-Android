@@ -39,22 +39,6 @@ class MainPresenterTest {
     }
 
     @Test
-    fun `getting size of todo list uses list returned by the repository`() {
-        val spyView = SpyView()
-        val spyTodoRepository = SpyTodoRepository()
-        val mainPresenter = MainPresenter(spyView, spyTodoRepository)
-
-        val todos = listOf(Todo("Build Android TodoList app."))
-        spyTodoRepository.getAll_returnValue = todos
-
-        mainPresenter.getAllTodoItems()
-        val todoItemsCount = mainPresenter.getTodoItemsCount()
-
-
-        assertEquals(1, todoItemsCount)
-    }
-
-    @Test
     fun `updateTodo updates each row with todo item`() {
         val spyView = SpyView()
         val spyTodoRepository = SpyTodoRepository()
@@ -68,9 +52,25 @@ class MainPresenterTest {
         spyTodoRepository.getAll_returnValue = todos
 
         mainPresenter.getAllTodoItems()
-        mainPresenter.updateTodo(1, spyTodoViewHolder)
+        mainPresenter.updateTodoViewHolder(1, spyTodoViewHolder)
 
 
         assertEquals(spyTodoViewHolder.setTitle_title, todos[1].title)
+    }
+
+    @Test
+    fun `getting size of todo list uses list returned by the repository`() {
+        val spyView = SpyView()
+        val spyTodoRepository = SpyTodoRepository()
+        val mainPresenter = MainPresenter(spyView, spyTodoRepository)
+
+        val todos = listOf(Todo("Build Android TodoList app."))
+        spyTodoRepository.getAll_returnValue = todos
+
+        mainPresenter.getAllTodoItems()
+        val todoItemsCount = mainPresenter.getTodoItemsCount()
+
+
+        assertEquals(1, todoItemsCount)
     }
 }

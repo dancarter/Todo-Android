@@ -18,7 +18,7 @@ class MainPresenter(
         }
     }
 
-    fun updateTodo(
+    fun updateTodoViewHolder(
         position: Int,
         holder: TodoItemViewHolder
     ) {
