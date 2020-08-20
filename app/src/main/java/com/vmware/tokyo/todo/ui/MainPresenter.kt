@@ -2,18 +2,19 @@ package com.vmware.tokyo.todo.ui
 
 import com.vmware.tokyo.todo.components.todo.Todo
 import com.vmware.tokyo.todo.components.todo.TodoRepository
-import com.vmware.tokyo.todo.ui.MainContract
-import com.vmware.tokyo.todo.ui.TodoItemViewHolder
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import org.koin.java.KoinJavaComponent.inject
 import kotlin.coroutines.CoroutineContext
 
 class MainPresenter(
-    val todoView: MainContract.View,
-    val todoRepository: TodoRepository
+    val todoView: MainContract.View
 ) : MainContract.Presenter, CoroutineScope {
-    private val job = Job()
-    override val coroutineContext: CoroutineContext = job + Dispatchers.Main
     private var todoList: List<Todo> = emptyList()
+    private val todoRepository: TodoRepository by inject(TodoRepository::class.java)
+    override val coroutineContext: CoroutineContext = Job() + Dispatchers.Main
 
     override fun getAllTodoItems() {
         launch {

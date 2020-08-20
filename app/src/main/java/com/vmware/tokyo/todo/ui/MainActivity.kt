@@ -3,9 +3,7 @@ package com.vmware.tokyo.todo.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.vmware.tokyo.todo.*
-import com.vmware.tokyo.todo.components.todo.NetworkTodoRepository
-import com.vmware.tokyo.todo.components.todo.getTodoClient
+import com.vmware.tokyo.todo.R
 
 class MainActivity : AppCompatActivity(), MainContract.View {
     lateinit var mainPresenter: MainPresenter
@@ -13,11 +11,9 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
-        val todoRepository = NetworkTodoRepository(getTodoClient())
-        mainPresenter = MainPresenter(this, todoRepository)
+        mainPresenter = MainPresenter(this)
         todoRecyclerView = findViewById(R.id.todoList)
         mainPresenter.getAllTodoItems()
         todoRecyclerView.adapter = TodoListRecyclerViewAdapter(mainPresenter)
